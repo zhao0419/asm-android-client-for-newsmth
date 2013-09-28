@@ -77,7 +77,11 @@ public class GuidanceListAdapter extends BaseExpandableListAdapter {
 
 	@Override
 	public int getChildrenCount(int groupPosition) {
-		return m_subjects.get(groupPosition).size();
+		if(m_subjects == null || m_subjects.size() == 0) {
+			return 0;
+		} else {			
+			return m_subjects.get(groupPosition).size();
+		}
 	}
 
 	@Override
